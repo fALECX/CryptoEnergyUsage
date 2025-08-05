@@ -1,0 +1,597 @@
+.app {
+  min-height: 100vh;
+  background-color: #2a2a2a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1040px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.2rem 0;
+}
+
+.progress-container {
+  margin: 3rem 0;
+  padding: 0 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 80px;
+  background-color: #404040;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+.progress-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: width 1s ease-in-out;
+}
+
+.progress-segment.bitcoin {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  border-radius: 8px 0 0 8px;
+}
+
+.progress-segment.ethereum {
+  background: linear-gradient(135deg, #44ff44, #00cc00);
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  will-change: transform;
+}
+
+.progress-segment.ethereum:hover {
+  transform: scaleX(20) !important;
+  z-index: 100;
+  box-shadow: 0 0 30px rgba(68, 255, 68, 0.8);
+  position: relative;
+  background: linear-gradient(135deg, #66ff66, #22dd22) !important;
+}
+
+.progress-segment.ethereum:hover .segment-content {
+  transform: scale(5);
+  transition: transform 0.3s ease;
+}
+
+.progress-segment:only-child {
+  border-radius: 8px;
+}
+
+.arrow-container {
+  position: absolute;
+  top: calc(50% - 0px);
+  left: calc(50% + 530px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.arrow-container-left {
+  position: absolute;
+  top: calc(50% - 0px);
+  left: calc(50% - 230px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.arrow-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4CAF50;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 200px;
+  line-height: 1.4;
+  order: -1;
+  margin-bottom: 0.5rem;
+}
+
+.arrow-text-left {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff4444;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 200px;
+  line-height: 1.4;
+  order: -1;
+  margin-bottom: 0.5rem;
+}
+
+.arrow-text-left a {
+  color: #ff4444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.arrow-text-left a:hover {
+  color: #ff6666;
+  text-decoration: underline;
+}
+
+.arrow-svg {
+  width: 60px;
+  height: 60px;
+  filter: invert(1) brightness(0.8);
+  transform: rotate(90deg);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.arrow-svg-left {
+  width: 60px;
+  height: 60px;
+  filter: invert(1) brightness(0.8);
+  transform: rotate(-90deg);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.arrow-svg:hover {
+  opacity: 0.9;
+  transform: rotate(90deg);
+}
+
+.arrow-svg-left:hover {
+  opacity: 0.9;
+  transform: rotate(-90deg);
+}
+
+.segment-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 15px;
+  text-align: center;
+}
+
+.crypto-name {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.power-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #404040;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-icon {
+  color: #888;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.info-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.info-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
+
+.pos-chains-section {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.pos-chains-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.chains-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #404040, #2a2a2a);
+  border-radius: 16px;
+  padding: 2rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.chain-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  margin: 0 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chain-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.chain-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+}
+
+.chain-item span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.comparison-container {
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: #404040;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.comparison-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.comparison-ratio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ratio-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+}
+
+.ratio-label {
+  font-weight: 600;
+  min-width: 120px;
+  color: #fff;
+}
+
+.ratio-value {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.ratio-bar {
+  flex: 1;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bitcoin-bar {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  width: 100%;
+}
+
+.ethereum-bar {
+  background: linear-gradient(135deg, #44ff44, #00cc00);
+  width: 100%;
+}
+
+.comparison-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-highlight {
+  text-align: center;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  min-width: 200px;
+}
+
+.highlight-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-text {
+  font-size: 0.9rem;
+  color: #ccc;
+  display: block;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 0 20px;
+}
+
+.stat-card {
+  background-color: #404040;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.stat-details {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.bitcoin-stat {
+  border-left: 4px solid #ff4444;
+}
+
+.ethereum-stat {
+  border-left: 4px solid #44ff44;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 2rem 0;
+}
+
+.error {
+  font-size: 1.1rem;
+  color: #ff6b6b;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header {
+    font-size: 2rem;
+  }
+  
+  .progress-bar {
+    height: 60px;
+    border-radius: 6px;
+  }
+  
+  .progress-segment.bitcoin {
+    border-radius: 6px 0 0 6px;
+  }
+  
+  .progress-segment.ethereum {
+    border-radius: 0 6px 6px 0;
+  }
+  
+  .progress-segment:only-child {
+    border-radius: 6px;
+  }
+  
+  .crypto-name {
+    font-size: 0.8rem;
+  }
+  
+  .power-value {
+    font-size: 1rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .arrow-container {
+    left: calc(50% + 150px);
+    top: calc(50% - 150px);
+  }
+  
+  .arrow-container-left {
+    left: calc(50% + 50px);
+    top: calc(50% - 150px);
+  }
+  
+  .arrow-text {
+    font-size: 1rem;
+    max-width: 150px;
+  }
+  
+  .arrow-text-left {
+    font-size: 1rem;
+    max-width: 150px;
+  }
+  
+  .arrow-svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .arrow-svg-left {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .pos-chains-title {
+    font-size: 1.5rem;
+  }
+  
+  .chain-item {
+    min-width: 100px;
+    margin: 0 1rem;
+    padding: 0.8rem;
+  }
+  
+  .chain-item img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .chain-item span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .header {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .progress-container {
+    margin: 2rem 0;
+    padding: 0 10px;
+  }
+  
+  .info-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .info-icon {
+    margin-right: 0;
+  }
+} 
