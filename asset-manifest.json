@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e5ed516.css",
-    "main.js": "/static/js/main.a3c6f63c.js",
-    "static/media/right-drawn-arrow-svgrepo-com.svg": "/static/media/right-drawn-arrow-svgrepo-com.43ceba86d08496f42bc158aa7a7c1f04.svg",
-    "index.html": "/index.html",
-    "main.4e5ed516.css.map": "/static/css/main.4e5ed516.css.map",
-    "main.a3c6f63c.js.map": "/static/js/main.a3c6f63c.js.map"
+    "main.css": "/cryptoenergyusage/static/css/main.4e5ed516.css",
+    "main.js": "/cryptoenergyusage/static/js/main.449d7969.js",
+    "static/media/right-drawn-arrow-svgrepo-com.svg": "/cryptoenergyusage/static/media/right-drawn-arrow-svgrepo-com.43ceba86d08496f42bc158aa7a7c1f04.svg",
+    "index.html": "/cryptoenergyusage/index.html",
+    "main.4e5ed516.css.map": "/cryptoenergyusage/static/css/main.4e5ed516.css.map",
+    "main.449d7969.js.map": "/cryptoenergyusage/static/js/main.449d7969.js.map"
   },
   "entrypoints": [
     "static/css/main.4e5ed516.css",
-    "static/js/main.a3c6f63c.js"
+    "static/js/main.449d7969.js"
   ]
 }
