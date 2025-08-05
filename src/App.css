@@ -2,16 +2,71 @@
   min-height: 100vh;
   background-color: #2a2a2a;
   color: white;
+  position: relative;
+}
+
+.header-toolbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.8rem 1.3rem;
+  height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.live-container {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: auto;
+  margin: 0;
+}
+
+.live-text {
+  font-size: 1.17rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.65px;
+}
+
+.live-dot {
+  width: 10.4px;
+  height: 10.4px;
+  background-color: #ff4444;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 13px rgba(255, 68, 68, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .container {
   max-width: 1040px;
   width: 100%;
   text-align: center;
+  padding-top: 0;
+  margin: 0 auto;
 }
 
 .header {
@@ -88,7 +143,7 @@
 
 .arrow-container {
   position: absolute;
-  top: calc(50% - -100px);
+  top: calc(50% - 475px);
   left: calc(50% + 530px);
   transform: translate(-50%, -50%);
   display: flex;
@@ -101,8 +156,8 @@
 
 .arrow-container-left {
   position: absolute;
-  top: calc(50% - -100px);
-  left: calc(50% - 230px);
+  top: calc(50% - 450px);
+  left: calc(50% - 150px);
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -488,6 +543,29 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .header-toolbar {
+    top: 15px;
+    right: 15px;
+    padding: 0.6rem 1rem;
+  }
+  
+  .live-container {
+    gap: 0.5rem;
+  }
+  
+  .live-text {
+    font-size: 1rem;
+  }
+  
+  .live-dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .container {
+    padding-top: 0;
+  }
+  
   .header {
     font-size: 2rem;
   }
@@ -532,12 +610,12 @@
   
   .arrow-container {
     left: calc(50% + 150px);
-    top: calc(50% - 150px);
+    top: calc(50% - 100px);
   }
   
   .arrow-container-left {
     left: calc(50% + 50px);
-    top: calc(50% - 150px);
+    top: calc(50% - 0px);
   }
   
   .arrow-text {

@@ -82,6 +82,13 @@ function App() {
 
   return (
     <div className="app">
+      <div className="header-toolbar">
+        <div className="live-container">
+          <span className="live-text">LIVE</span>
+          <div className="live-dot"></div>
+        </div>
+      </div>
+      
       <div className="container">
         
         <h1 className="header">Why Proof of Stake is necessary</h1>
