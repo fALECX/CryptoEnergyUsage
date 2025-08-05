@@ -88,7 +88,7 @@
 
 .arrow-container {
   position: absolute;
-  top: calc(50% - 0px);
+  top: calc(50% - -100px);
   left: calc(50% + 530px);
   transform: translate(-50%, -50%);
   display: flex;
@@ -101,7 +101,7 @@
 
 .arrow-container-left {
   position: absolute;
-  top: calc(50% - 0px);
+  top: calc(50% - -100px);
   left: calc(50% - 230px);
   transform: translate(-50%, -50%);
   display: flex;
@@ -250,12 +250,22 @@
 }
 
 .pos-chains-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 900;
   text-align: center;
   margin-bottom: 2rem;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.pos-chains-title-2 {
+  font-size: 2.5rem;
+  font-weight: 1100;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 2 5px 4px rgba(0, 0, 0, 1);
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 

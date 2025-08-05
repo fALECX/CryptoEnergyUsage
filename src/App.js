@@ -168,30 +168,10 @@ function App() {
            </div>
          </div>
 
-         
+         <div className="pos-chains-section">
+         <h2 className="pos-chains-title-2">USE PROOF OF STAKE INSTEAD!</h2>
 
-        <div className="stats-container">
-          <div className="stat-card bitcoin-stat">
-            <h3>Bitcoin (Proof of Work)</h3>
-            <div className="stat-value">{bitcoinPowerGW.toFixed(2)} GW</div>
-            <div className="stat-details">
-              <div>Lower bound: {bitcoinData?.lower_bound || 'N/A'} GW</div>
-              <div>Upper bound: {bitcoinData?.upper_bound || 'N/A'} GW</div>
-            </div>
-          </div>
-          
-          <div className="stat-card ethereum-stat">
-            <h3>Ethereum (Proof of Stake)</h3>
-            <div className="stat-value">{ethereumPowerGW.toFixed(4)} GW</div>
-            <div className="stat-details">
-              <div>Min power: {ethereumData ? (ethereumData.min_power / 1000000).toFixed(4) : 'N/A'} GW</div>
-              <div>Max power: {ethereumData ? (ethereumData.max_power / 1000000).toFixed(4) : 'N/A'} GW</div>
-            </div>
-          </div>
-          
-        </div>
-        <div className="pos-chains-section">
-            <h2 className="pos-chains-title">These chains already use Proof of Stake!</h2>
+            <h2 className="pos-chains-title">These chains already use PoS:</h2>
             <div className="chains-carousel">
               <div className="carousel-track">
                 <div className="chain-item">
@@ -242,6 +222,28 @@ function App() {
               </div>
             </div>
           </div>
+
+        <div className="stats-container">
+          <div className="stat-card bitcoin-stat">
+            <h3>Bitcoin (Proof of Work)</h3>
+            <div className="stat-value">{bitcoinPowerGW.toFixed(2)} GW</div>
+            <div className="stat-details">
+              <div>Lower bound: {bitcoinData?.lower_bound || 'N/A'} GW</div>
+              <div>Upper bound: {bitcoinData?.upper_bound || 'N/A'} GW</div>
+            </div>
+          </div>
+          
+          <div className="stat-card ethereum-stat">
+            <h3>Ethereum (Proof of Stake)</h3>
+            <div className="stat-value">{ethereumPowerGW.toFixed(4)} GW</div>
+            <div className="stat-details">
+              <div>Min power: {ethereumData ? (ethereumData.min_power / 1000000).toFixed(4) : 'N/A'} GW</div>
+              <div>Max power: {ethereumData ? (ethereumData.max_power / 1000000).toFixed(4) : 'N/A'} GW</div>
+            </div>
+          </div>
+          
+        </div>
+       
 
           <div className="info-container">
            <div className="info-icon">
