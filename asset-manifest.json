@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/LiveCryptoData/static/css/main.8c163cf9.css",
+    "main.js": "/LiveCryptoData/static/js/main.a33e958c.js",
+    "static/media/right-drawn-arrow-svgrepo-com.svg": "/LiveCryptoData/static/media/right-drawn-arrow-svgrepo-com.43ceba86d08496f42bc158aa7a7c1f04.svg",
+    "index.html": "/LiveCryptoData/index.html",
+    "main.8c163cf9.css.map": "/LiveCryptoData/static/css/main.8c163cf9.css.map",
+    "main.a33e958c.js.map": "/LiveCryptoData/static/js/main.a33e958c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c163cf9.css",
+    "static/js/main.a33e958c.js"
+  ]
+}
